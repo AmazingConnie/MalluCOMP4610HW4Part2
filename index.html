@@ -1,0 +1,99 @@
+<!--
+Name: Rohan Mallu
+Date Created: November 13th 2024
+File: index.html
+GUI Assignment: Using the jQuery Plugin/UI with Your Dynamic Table
+Description: HTML file for HW4 Part 2. This is where the user will input numbers for the table.
+-->
+
+<!--
+ Resources:
+ - onClick() with JS: https://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_url 
+ - HTML Forms (for general reference): https://www.w3schools.com/html/html_forms.asp 
+-->
+
+<!doctype html>
+<html lang = "en">
+    <head>
+        <meta-charset="utf-8">
+        <title>Creating an Interactive Dynamic Table </title>   
+        <link rel="stylesheet" type="text/css" href="css/styles.css">  
+
+        <!-- jQuery CSS file -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css"> 
+     
+    </head>
+    <body>
+            <!-- Website Page Title -->
+            <h1>Interactive Dynamic Table</h1>
+
+            <!-- Form for entering numbers -->
+             <div id = "form-layout">
+                <form id="submission">
+                    <p id="instructions">Please enter the table ranges:</p>
+
+                    <!-- Input the minimum number of columns -->
+                     <div class = "inputNum">
+                        <label for="minCols">Minimum Column Value (between -50 to 50):</label>
+                        <div id = "minColSlider"></div>
+                        <input type="text" id="minCol" name="minCol" placeholder="Enter value here">
+                        <p id="minColError"></p>
+                    </div>
+                    
+                    <!-- Input the maximum number of columns -->
+                     <div class = "inputNum">
+                        <label for="maxCols">Maximum Column Value (between -50 to 50):</label>
+                        <div id = "maxColSlider"></div>
+                        <input type="text" id="maxCol" name="maxCol" placeholder="Enter value here">
+                        <p id="maxColError"></p>
+                    </div>
+         
+                    <!-- Input the minimum number of rows -->
+                    <div class = "inputNum">
+                        <label for="minRows">Minimum Row Value (between -50 to 50):</label>
+                        <div id = "minRowSlider"></div>
+                        <input type="text" id="minRow" name="minRow" placeholder="Enter value here">
+                        <p id="minRowError"></p>
+                    </div>
+
+                    <!-- Input the maximum number of rows -->
+                    <div class = "inputNum">
+                        <label for="maxRows">Maximum Row Value (between -50 to 50):</label>
+                        <div id = "maxRowSlider"></div>
+                        <input type="text" id="maxRow" name="maxRow" placeholder="Enter value here">
+                        <p id="maxRowError"></p>
+                    </div>
+
+                    <!-- When user hits submit, the button invokes a function that dynamically creates the table -->
+                    <div class = "buttonFormat">
+                        <button type="submit">Submit</button>
+                        <p id="tableError"></p>
+                    </div>
+                </form>
+            </div>
+            
+            <br>
+            <br>
+
+            <!-- Generate table inside the div container-->
+            <div id="table-container"></div>
+
+            <!-- Implement div container and unordered list for tabs -->
+            <div id="tabs">
+                <ul></ul>
+            </div>
+
+            <!-- jQuery CDN links -->
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+            <!-- Custom jQuery files for validation and UI components-->
+            <script src="js/form-validation.js"></script>
+            <script src="js/sliders.js"></script>
+            <script src="js/tabs.js"></script>
+
+            <!-- JS file for generating the table -->
+            <script src="js/index.js"></script>
+    </body>
+</html>
